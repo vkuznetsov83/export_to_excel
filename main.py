@@ -1,15 +1,28 @@
-import json
 import openpyxl
 
-book = openpyxl.Workbook()
+wb = openpyxl.Workbook()
 
-sheet = book.active
+ws = wb.active
+ws.title = "Price List"
 
-sheet['A1'] = 100
-sheet['B3'] = 'hello'
+# Header
 
-sheet[1][0].value = 'world'
-sheet.cell(row = 1, column = 3).value = 'hello world'
+ws['G2'] = 'PRICE LIST'
 
-book.save('sheet.xlsx')
-book.close()
+ws['A5'] = 'Company name'
+ws['A6'] = 'house_street'
+ws['A7'] = 'city_zip'
+
+ws['C5'] = 'Phone'
+ws['C6'] = 'E-mail'
+ws['C7'] = 'Website'
+
+ws['F5'] = 'Valid from'
+ws['F6'] = 'Valid to'
+
+
+
+
+
+
+wb.save(filename='Price_list.xlsx')
